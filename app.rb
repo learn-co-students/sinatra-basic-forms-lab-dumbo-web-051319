@@ -14,7 +14,7 @@ class App < Sinatra::Base
         # binding.pry
         # @puppy = Puppy.create(params[:name], params[:breed], params[:age])
 
-        @name = params[:name]
+        @name = params[:name]               #stupid for doesnt 
         @age = params[:age]
         @breed = params[:breed]
         erb :display_puppy
