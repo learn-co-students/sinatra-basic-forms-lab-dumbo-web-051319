@@ -12,7 +12,7 @@ Puppy class
 App
   GET /
     sends a 200 status code                                        (in app.rb: get '/' do end)
-    has a link with the text "List a Puppy" 
+    has a link with the text "List a Puppy"                        (index.erb has everything linked and will automatically do this)
     has a link to list a puppy that links to /new 
   
   GET /new
@@ -20,9 +20,9 @@ App
     renders a form that can POST a name, breed, and age            (added erb :create_puppy.erb/form)
   
   POST /puppy
-    sends a 200 status code (FAILED - 6)
-    recieves a request from /new at /puppy (FAILED - 7)
-    displays the puppy information dynamically (FAILED - 8)
+    sends a 200 status code                                        (in app.rb: post '/puppy' do end)
+    recieves a request from /new at /puppy                         (controller automatically does it)
+    displays the puppy information dynamically
 
 ## Objectives
     1. Implement a POST request to the controller to display data from a user in the view
@@ -59,10 +59,14 @@ The focus of this lab is to build a way for a user to go to a homepage, follow a
   <!-- 4a. <form></form> in create_puppy.erb in Views      4b. get '/new' do end in app.rb(the new came from  the instructions)
   4c. <input type="submit" value="submit"> -->
 
-5. Now we need to make sure the form is being submitted properly. You'll need
-   to have a third controller action that takes the input from the user and
-   renders a third view (`views/display_puppy.erb`) which displays the info for
-   the puppy that was just created. Create an instance of a puppy to hold the data about the puppy you just created.
+5. Now we need to make sure the form is being submitted properly. 
+   a. Need 3rd controller action that takes the input from the user
+  b.  Need 3rd controller action to render a third view (`views/display_puppy.erb`) which displays the info for
+   the puppy that was just created. 
+   c. Create an instance of a puppy to hold the data about the puppy you just created.
+5a. In app.rb added post '/puppy' do end (I did post method because of LEARN instructions)
+5b. 
+
 
 6. Add a link on the homepage to the new puppy form.
 
